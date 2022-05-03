@@ -1,5 +1,9 @@
-function App() {
-  return <h1>project</h1>
-}
+import { Widget } from "./components/Widget";
 
-export default App
+export function App() {
+  return (
+  <>
+    <Widget />
+  </>
+  )
+}

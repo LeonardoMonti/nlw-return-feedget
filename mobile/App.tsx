@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import AppLoading from 'expo-app-loading';
-import { View } from 'react-native';
+import { KeyboardAvoidingView, Platform, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import {
   useFonts,
@@ -22,6 +22,10 @@ export default function App() {
   }
 
   return (
+    <KeyboardAvoidingView
+      behavior={ Platform.OS === 'ios' ? 'padding' : 'height' }
+      style={{ flex: 1 }}
+    >
     <View style={{
       flex: 1,
       backgroundColor: theme.colors.background
@@ -34,5 +38,6 @@ export default function App() {
       
       <Widget />
     </View>
+    </KeyboardAvoidingView>
   );
 }

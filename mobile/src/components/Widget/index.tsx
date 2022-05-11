@@ -35,18 +35,18 @@ function Widget() {
 
   return (
     <>
-      <TouchableOpacity style={styles.button} onPress={handleOpen}>
+      <TouchableOpacity style={ styles.button } onPress={handleOpen}>
         <ChatTeardropDots
-          size={24}
+          size={ 24 }
           weight="bold"
-          color={theme.colors.text_on_brand_color}
+          color={ theme.colors.text_on_brand_color }
         />
       </TouchableOpacity>
         <BottomSheet
-          ref={bottomSheetRef}
-          snapPoints={[1,280]}
-          backgroundStyle={styles.modal}
-          handleIndicatorStyle={styles.indicator}
+          ref={ bottomSheetRef }
+          snapPoints={ [1,280] }
+          backgroundStyle={ styles.modal }
+          handleIndicatorStyle={ styles.indicator }
         >
           {
             feedbackSent 
@@ -57,12 +57,12 @@ function Widget() {
                 {
                   feedbackType ?
                   <Form
-                    feedbackType="BUG"
+                    feedbackType={ feedbackType }
                     onFeedbackCanceled={ handleRestartFeedback }
-                    onFeedbackSent={handleFeedbackSend}
+                    onFeedbackSent={ handleFeedbackSend }
                   />
                   :
-                  <Options onFeedbackTypeChanged={setFeedbackType}/>
+                  <Options onFeedbackTypeChanged={ setFeedbackType } />
                 }
               </>
           }
